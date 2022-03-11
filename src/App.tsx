@@ -11,7 +11,15 @@ const App = () => {
     <>
       <Navbar />
       <div style={{ marginTop: '20px', textAlign: 'center' }}>
-        Using api: <span style={{ color: 'red' }}>"https://jsonplaceholder.typicode.com"</span>
+        Using api:{' '}
+        <a
+          href="https://jsonplaceholder.typicode.com"
+          target="_blank"
+          style={{ color: 'red' }}
+          rel="noreferrer"
+        >
+          "https://jsonplaceholder.typicode.com"
+        </a>
       </div>
       <Routes>
         <Route path="/" element={<TodoList />} />
