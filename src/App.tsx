@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import AddTodo from './components/AddTodo';
+import Edit from './components/Edit';
+import Navbar from './components/Navbar';
+import Todo from './components/Todo';
+import TodoList from './components/TodoList';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div style={{ marginTop: '20px', textAlign: 'center' }}>
+        Using api: <span style={{ color: 'red' }}>"https://jsonplaceholder.typicode.com"</span>
+      </div>
+      <Routes>
+        <Route path="/" element={<TodoList />} />
+        <Route path="/todo/add" element={<AddTodo />} />
+        <Route path="/todo/:id" element={<Todo />} />
+        <Route path="/todo/edit/:id" element={<Edit />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
